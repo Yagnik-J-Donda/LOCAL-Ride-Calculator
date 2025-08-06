@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fuel Cost Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Fuel Cost Calculator</h1>
+
+  <!-- 🔢 Input Form -->
+  <form id="fuel-form">
+    <input type="number" id="distance" placeholder="Distance (km)" step="0.1" required />
+    <input type="number" id="mileage" placeholder="Mileage (L/100km)" step="0.1" required />
+    <input type="number" id="hours" placeholder="Hours" step="0.1" required />
+    <input type="number" id="minutes" placeholder="Minutes" step="0.1" required />
+    <button type="submit">Calculate</button>
+  </form>
+
+  <!-- 📊 Output Section -->
+  <div id="output-section"></div>
+
+  <!-- 💬 Fuel Price Modal -->
+  <div id="fuel-price-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3>Enter Fuel Price</h3>
+      <input type="number" id="fuel-price-input" placeholder="e.g. 1.65" step="0.01" required />
+      <button id="confirm-price">Confirm</button>
+    </div>
+  </div>
+
+  <!-- 📦 Scripts -->
+  <script src="logic.js"></script>
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
