@@ -29,11 +29,19 @@ form input, button {
 }
 
 .modal-content {
-  background: white;
+  background: #fff;
+  border-radius: 16px;
   padding: 20px;
-  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 80vh;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   text-align: center;
+  overflow-y: auto; /* for vertical scrolling */
+  overflow-x: hidden;
+  position: relative;
 }
+
 
 /* Make entire content centered and responsive */
 body {
@@ -84,4 +92,110 @@ button {
   width: 90%;
   max-width: 400px;
   box-sizing: border-box;
+}
+
+
+/* ✅ General Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ✅ Modal Inner Box */
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ✅ Close Button (top-right) */
+.modal-content #close-history {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.modal-content #close-history:hover {
+  color: #000;
+}
+
+/* ✅ Input inside Modal */
+.modal-content input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* ✅ Button inside Modal */
+.modal-content button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #0056b3;
+}
+
+/* ✅ Optional Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.history-table th {
+  background-color: #007BFF;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.history-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.history-table tr:hover {
+  background-color: #e9f5ff;
 }

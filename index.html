@@ -16,7 +16,11 @@
     <input type="number" id="mileage" placeholder="Mileage (L/100km)" step="0.1" required />
     <input type="number" id="hours" placeholder="Hours" step="0.1" required />
     <input type="number" id="minutes" placeholder="Minutes" step="0.1" required />
+    
     <button type="submit">Calculate</button>
+
+    <!-- 👇 View History Button -->
+    <button type="button" id="view-history-btn" style="margin-top: 10px;">View History</button>
   </form>
 
   <!-- 📊 Output Section -->
@@ -30,6 +34,33 @@
       <button id="confirm-price">Confirm</button>
     </div>
   </div>
+
+  <!-- 🕘 History Modal -->
+    <div id="history-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="close-history" style="float: right; cursor: pointer;">&times;</span>
+        <h3>Fuel Cost History</h3>
+
+        <div id="history-content">
+        <!-- 🔽 Date Dropdown -->
+        <div id="history-controls" style="margin-bottom: 15px; text-align: center;">
+            <label for="date-filter"><strong>Select Date:</strong></label>
+            <select id="date-filter"></select>
+        </div>
+
+        <!-- 📊 Summary Area -->
+        <div id="daily-summary" style="margin-bottom: 15px;">
+            <!-- Total rides & total cost will be shown here -->
+        </div>
+
+        <!-- 📋 Table Output -->
+        <div id="history-table-wrapper" style="overflow-x: auto;">
+            <!-- Table will be rendered here -->
+        </div>
+        </div>
+    </div>
+    </div>
+
 
   <!-- 📦 Scripts -->
   <script src="logic.js"></script>

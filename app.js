@@ -8,7 +8,6 @@ document.getElementById("fuel-form").addEventListener("submit", function (e) {
 
   window.tempFuelData = { distance, mileage, hours, minutes };
 
-  // Show fuel price popup
   document.getElementById("fuel-price-modal").style.display = "flex";
 });
 
@@ -20,4 +19,13 @@ document.getElementById("confirm-price").addEventListener("click", () => {
   const result = calculateFuelCost(data.distance, data.mileage, data.hours, data.minutes, fuelPrice);
 
   renderOutput(result, data, fuelPrice);
+});
+
+document.getElementById("view-history-btn").addEventListener("click", () => {
+  renderHistory();
+  document.getElementById("history-modal").style.display = "flex";
+});
+
+document.getElementById("close-history").addEventListener("click", () => {
+  document.getElementById("history-modal").style.display = "none";
 });
