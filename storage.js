@@ -107,7 +107,7 @@ summaryDiv.innerHTML = `
         <th>Distance</th>
         <th>Mileage L/100km</th>
         <th>Fuel Price</th>
-        <th>Avg Speed  km/h<</th>
+        <th>Avg Speed  km/h</th>
         <th>Time</th>
         <th>Edit</th>
       </tr>
@@ -121,7 +121,7 @@ summaryDiv.innerHTML = `
           <td>${e.distance_km} km</td>
           <td>${e.fuel_efficiency}</td>
           <td>$${e.fuel_price}</td>
-          <td>${e.average_speed}/td>
+          <td>${e.average_speed}</td>
           <td>${e.time}</td>
           <td><button class="edit-btn" data-date="${date}" data-index="${index}">✏️ Edit</button></td>
         </tr>
