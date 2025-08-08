@@ -199,3 +199,24 @@ button {
 .history-table tr:hover {
   background-color: #e9f5ff;
 }
+
+.edit-btn {
+  background: #ffc107;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background: #e0a800;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

@@ -3,10 +3,11 @@ document.getElementById("fuel-form").addEventListener("submit", function (e) {
 
   const distance = parseFloat(document.getElementById("distance").value);
   const mileage = parseFloat(document.getElementById("mileage").value);
+  const income = parseFloat(document.getElementById("income").value);
   const hours = parseInt(document.getElementById("hours").value);
   const minutes = parseInt(document.getElementById("minutes").value);
 
-  window.tempFuelData = { distance, mileage, hours, minutes };
+  window.tempFuelData = { distance, mileage, income, hours, minutes };
 
   document.getElementById("fuel-price-modal").style.display = "flex";
 });
@@ -16,7 +17,14 @@ document.getElementById("confirm-price").addEventListener("click", () => {
   document.getElementById("fuel-price-modal").style.display = "none";
 
   const data = window.tempFuelData;
-  const result = calculateFuelCost(data.distance, data.mileage, data.hours, data.minutes, fuelPrice);
+  const result = calculateFuelCost(
+    data.distance, 
+    data.mileage, 
+    data.hours, 
+    data.minutes, 
+    fuelPrice, 
+    data.income
+  );
 
   renderOutput(result, data, fuelPrice);
 });
