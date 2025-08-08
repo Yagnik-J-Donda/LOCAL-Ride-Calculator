@@ -17,10 +17,16 @@
     <input type="number" id="income" placeholder="Ride Income ($)" step="0.01" required />
     <input type="number" id="hours" placeholder="Hours" step="0.1" required />
     <input type="number" id="minutes" placeholder="Minutes" step="0.1" required />
-    
+
+    <!-- 🕒 Ride Date & Time (auto-updates) -->
+     <label for="ride-datetime" style="margin-top:10px; display:block;">
+      <strong>Entry Date & Time</strong>
+    </label>
+    <input type="datetime-local" id="ride-datetime" required />
     <button type="submit">Calculate</button>
     <button type="button" id="view-history-btn" style="margin-top: 10px;">View History</button>
   </form>
+
 
   <!-- 📊 Output Section -->
   <div id="output-section"></div>
